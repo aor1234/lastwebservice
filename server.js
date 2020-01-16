@@ -20,55 +20,43 @@ app.get('/', function(req, res, next) {
     res.send("Online");
 });
 
-// app.post('/liff', function(req, res, next) {
-//     var options = {
-//         method: 'POST',
-//         uri: 'https://gentle-crag-28693.herokuapp.com/search',
-//         json: true
-//     };
 
-//     rp(options)
-//         .then(function(parsedBody) {
-//             res.send(parsedBody)
-//         })
-//         .catch(function(err) {
-//             return next(err);
-//         });
-// });
 
 app.post('/test', function(req, res, next) {
-    var sql = require('mssql');
-    var config = {
-        user: 'sa',
-        password: 'psdsystem',
-        server: '192.168.40.7',
-        database: 'IntershipDB',
-        options: {
-            instanceName: 'sqlexpress'
-        }
-    };
-    sql.close();
-    sql.connect(config, function(err) {
-        if (err) console.log('ERROR : ' + err);
+//     var sql = require('mssql');
+//     var config = {
+//         user: 'sa',
+//         password: 'psdsystem',
+//         server: '192.168.40.7',
+//         database: 'IntershipDB',
+//         options: {
+//             instanceName: 'sqlexpress'
+//         }
+//     };
+//     sql.close();
+//     sql.connect(config, function(err) {
+//         if (err) console.log('ERROR : ' + err);
 
-        // var query = 'SELECT XFsahGrand FROM TPOSTSalHD\
-        // WHERE XVBchCode = \'' + req.body.uname + '\'\
-        // AND XDSahDocDate BETWEEN \'' + req.body.fdate + '\'\
-        // AND  \'' + req.body.ldate + '\'\
-        // ';
+//         // var query = 'SELECT XFsahGrand FROM TPOSTSalHD\
+//         // WHERE XVBchCode = \'' + req.body.uname + '\'\
+//         // AND XDSahDocDate BETWEEN \'' + req.body.fdate + '\'\
+//         // AND  \'' + req.body.ldate + '\'\
+//         // ';
 
-        var query = 'SELECT * FROM TCNMEmp';
-        var request = new sql.Request();
-        request.query(query, function(err, recordset) {
-            if (err) console.log('ERROR : ' + err);
+//         var query = 'SELECT * FROM TCNMEmp';
+//         var request = new sql.Request();
+//         request.query(query, function(err, recordset) {
+//             if (err) console.log('ERROR : ' + err);
 
-            if (recordset != undefined && recordset.recordset.length > 0) {
-                res.send(recordset.recordset);
-            } else {
-                res.send("No data found.");
-            }
-        });
-    });
+//             if (recordset != undefined && recordset.recordset.length > 0) {
+//                 res.send(recordset.recordset);
+//             } else {
+//                 res.send("No data found.");
+//             }
+//         });
+//     });
+    
+    res.send("complete krab");
 });
 
 app.listen(process.env.PORT || port, function() {
