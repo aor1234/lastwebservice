@@ -31,7 +31,7 @@ app.post('/test', function(req, res, next) {
             "bchcode": req.body.bchcode
             ,"date_start": req.body.date_start
             , "date_stop": req.body.date_stop
-        });
+        }),
         json: true
     };
 
