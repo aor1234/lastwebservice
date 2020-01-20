@@ -23,20 +23,20 @@ app.get('/', function(req, res, next) {
 
 
 app.post('/test', function(req, res, next) {
-    res.send("test")
-//         var options = {
-//         method: 'POST',
-//         uri: 'https://31f523c5.ngrok.io/test',
-//         json: true
-//     };
+//     res.send("test")
+        var options = {
+        method: 'POST',
+        uri: 'https://31f523c5.ngrok.io/test',
+        json: true
+    };
 
-//     rp(options)
-//         .then(function(parsedBody) {
-//             res.send(parsedBody)
-//         })
-//         .catch(function(err) {
-//             return next(err);
-//         });
+    rp(options)
+        .then(function(parsedBody) {
+            res.send(parsedBody)
+        })
+        .catch(function(err) {
+            return next(err);
+        });
     
     
 });
