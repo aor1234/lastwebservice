@@ -23,19 +23,21 @@ app.get('/', function(req, res, next) {
 
 
 app.post('/test', function(req, res, next) {
-        var options = {
-        method: 'POST',
-        uri: 'https://80beac66.ngrok.io/test',
-        json: true
-    };
+//         var options = {
+//         method: 'POST',
+//         uri: 'https://80beac66.ngrok.io/test',
+//         json: true
+//     };
 
-    rp(options)
-        .then(function(parsedBody) {
-            res.send(parsedBody)
-        })
-        .catch(function(err) {
-            return next(err);
-        });
+//     rp(options)
+//         .then(function(parsedBody) {
+//             res.send(parsedBody)
+//         })
+//         .catch(function(err) {
+//             return next(err);
+//         });
+    
+    res.send("aor");
 });
 
 app.listen(process.env.PORT || port, function() {
