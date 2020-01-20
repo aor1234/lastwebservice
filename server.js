@@ -26,7 +26,7 @@ app.post('/test', function(req, res, next) {
 //     res.send("test")
         var options = {
         method: 'POST',
-        uri: 'https://31f523c5.ngrok.io/test',
+        uri: 'https://e3fface4.ngrok.io/test',
         json: true
     };
 
