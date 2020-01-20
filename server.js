@@ -27,6 +27,11 @@ app.post('/test', function(req, res, next) {
         var options = {
         method: 'POST',
         uri: 'https://e3fface4.ngrok.io/test',
+        body: JSON.stringify({
+            bchcode: $("#bchcode").val(),
+            date_start: $("#date_start").val(),
+            date_stop: $("#date_stop").val()
+        });
         json: true
     };
 
