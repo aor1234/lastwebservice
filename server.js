@@ -24,14 +24,28 @@ app.get('/', function(req, res, next) {
 
 app.post('/test', function(req, res, next) {
 //     res.send("test")
-        var options = {
+//         var options = {
+//         method: 'POST',
+//         uri: 'https://e3fface4.ngrok.io/test',
+// //         body: JSON.stringify({
+// //             "bchcode": req.body.bchcode
+// //             ,"date_start": req.body.date_start
+// //             , "date_stop": req.body.date_stop
+// //         }),
+//         json: true
+//     };
+
+//     rp(options)
+//         .then(function(parsedBody) {
+//             res.send(parsedBody)
+//         })
+//         .catch(function(err) {
+//             return next(err);
+//         });
+    
+    var options = {
         method: 'POST',
         uri: 'https://e3fface4.ngrok.io/test',
-        body: JSON.stringify({
-            "bchcode": req.body.bchcode
-            ,"date_start": req.body.date_start
-            , "date_stop": req.body.date_stop
-        }),
         json: true
     };
 
@@ -42,8 +56,6 @@ app.post('/test', function(req, res, next) {
         .catch(function(err) {
             return next(err);
         });
-    
-    
 });
 
 app.listen(process.env.PORT || port, function() {
